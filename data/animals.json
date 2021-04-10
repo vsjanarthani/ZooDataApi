@@ -1,0 +1,113 @@
+{
+    "animals": [
+    {
+    "id": "0",
+    "name": "spindle",
+    "species": "bear",
+    "diet": "carnivore",
+    "personalityTraits": [
+    "hungry",
+    "zany",
+    "loving"
+    ]
+    },
+    {
+    "id": "1",
+    "name": "terry",
+    "species": "gorilla",
+    "diet": "omnivore",
+    "personalityTraits": [
+    "anxious",
+    "goofy"
+    ]
+    },
+    {
+    "id": "2",
+    "name": "erica",
+    "species": "gorilla",
+    "diet": "omnivore",
+    "personalityTraits": [
+    "quirky",
+    "rash"
+    ]
+    },
+    {
+    "id": "3",
+    "name": "noel",
+    "species": "bear",
+    "diet": "carnivore",
+    "personalityTraits": [
+    "impish",
+    "sassy",
+    "brave"
+    ]
+    },
+    {
+    "id": "4",
+    "name": "coco",
+    "species": "penguin",
+    "diet": "herbivore",
+    "personalityTraits": [
+    "loving",
+    "goofy"
+    ]
+    },
+    {
+    "id": "5",
+    "name": "marcy",
+    "species": "ostrich",
+    "diet": "herbivore",
+    "personalityTraits": [
+    "hungry",
+    "goofy"
+    ]
+    },
+    {
+    "id": "6",
+    "name": "bodhi",
+    "species": "doggo",
+    "diet": "herbivore",
+    "personalityTraits": [
+    "zany"
+    ]
+    },
+    {
+    "id": "7",
+    "name": "cassie",
+    "species": "doggo",
+    "diet": "herbivore",
+    "personalityTraits": [
+    "hungry",
+    "zany",
+    "goofy"
+    ]
+    },
+    {
+    "id": "8",
+    "name": "roxy",
+    "species": "quokka",
+    "diet": "herbivore",
+    "personalityTraits": [
+    "loving"
+    ]
+    },
+    {
+    "id": "9",
+    "name": "tamara",
+    "species": "tiger",
+    "diet": "carnivore",
+    "personalityTraits": [
+    "hungry"
+    ]
+    },
+    {
+    "name": "sufjan",
+    "species": "koala bear",
+    "diet": "herbivore",
+    "personalityTraits": [
+    "loving"
+    ],
+    "id": "10"
+    }
+    ]
+    }

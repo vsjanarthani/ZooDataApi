@@ -1,0 +1,22 @@
+{
+  "name": "zoodataapi",
+  "version": "1.0.0",
+  "description": "API for Zoo Data",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vsjanarthani/ZooDataApi.git"
+  },
+  "author": "Janarthani V Subramaniam",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/vsjanarthani/ZooDataApi/issues"
+  },
+  "homepage": "https://github.com/vsjanarthani/ZooDataApi#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
