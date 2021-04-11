@@ -57,6 +57,6 @@ const filterByQuery = (query, animalsArray) => {
 
 
 
-app.listen(3001, () => {
+app.listen(PORT, () => {
     console.log(`Listening to port ${PORT}!`);
 });
