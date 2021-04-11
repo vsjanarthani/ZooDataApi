@@ -1,7 +1,7 @@
 const { query } = require('express');
 const express = require('express');
 const app = express();
-const PORT = 3001;
+const PORT = process.env.PORT || 3001;
 const { animals } = require('./data/animals.json');
 
 // Get data by query
