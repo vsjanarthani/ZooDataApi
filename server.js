@@ -8,6 +8,7 @@ const PORT = process.env.PORT || 3001;
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
+app.use(express.static('public'));
 
 
 // Get data by quering params
@@ -119,6 +120,11 @@ const createNewAnimal = (newanimal, animalsArray) => {
     );
     return newanimal;
 }
+
+// Get the html file
+app.get('/', (req, res) => {
+    res.sendFile(path.join(__dirname, './client/index.html'));
+  });
 
 app.listen(PORT, () => {
     console.log(`Listening to port ${PORT}!`);
