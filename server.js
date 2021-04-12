@@ -1,10 +1,16 @@
-const { query } = require('express');
+const fs = require('fs');
+const path = require('path');
 const express = require('express');
-const app = express();
-const PORT = process.env.PORT || 3001;
 const { animals } = require('./data/animals.json');
 
-// Get data by query
+const app = express();
+const PORT = process.env.PORT || 3001;
+
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
+
+
+// Get data by quering params
 app.get('/api/animals', (req, res) => {
     let results = animals;
     if (req.query) {
@@ -55,7 +61,64 @@ const filterByQuery = (query, animalsArray) => {
 }
 
 
+// get data by animals 
+app.get('/api/animals/:id', (req, res) => {
+    const result = findById(req.params.id, animals);
+    if (result) {
+      res.json(result);
+    } else {
+      res.send(404);
+    }
+  });
 
+//   Function to get data by ID
+
+function findById(id, animalsArray) {
+    const result = animalsArray.filter(animal => animal.id === id)[0];
+    return result;
+};
+
+// Post request by animals
+
+app.post('/api/animals', (req, res) => {
+    console.log(`Line 84: ${req.body}`);
+    req.body.id = animals.length.toString();
+
+    if (!validataAnimal(req.body)) {
+        res.status(400).send('The animal is not properly formatted');
+    } else {
+        const animal = createNewAnimal(req.body, animals);
+        res.json(animal);
+    }
+
+});
+
+// Function to validate animal from post request
+const validataAnimal = animal => {
+    if (!animal.name || typeof animal.name !== 'string') {
+        return false;
+    }
+    if (!animal.species || typeof animal.species !== 'string') {
+        return false;
+    }
+    if (!animal.diet || typeof animal.diet !== 'string') {
+        return false;
+    }
+    if (!animal.personalityTraits || !Array.isArray(animal.personalityTraits)) {
+        return false;
+    }
+    return true;
+};
+
+// Function to add new animal to the data
+const createNewAnimal = (newanimal, animalsArray) => {
+    animalsArray.push(newanimal);
+    fs.writeFileSync (
+        path.join(__dirname, './data/animals.json'),
+        JSON.stringify({ animals: animalsArray }, null, 2)
+    );
+    return newanimal;
+}
 
 app.listen(PORT, () => {
     console.log(`Listening to port ${PORT}!`);
